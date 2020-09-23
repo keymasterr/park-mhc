@@ -1,0 +1,359 @@
+mq-mobile = 'only screen and (max-width: 760px)'
+mq-not_mobile = 'only screen and (min-width: 761px)'
+*
+  box-sizing: border-box
+  outline: none
+
+html
+  background-color: #1d2027
+  color: #fff
+  font-family: Rubik, sans-serif
+  font-weight: 400
+  font-size: 18px
+  line-height: 1.5
+
+  @media mq-mobile
+    font-size: 16px
+
+
+body
+  width: 100%
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+
+.wrapper
+  max-width: 1024px
+  margin: 0 auto
+
+  display: flex
+  flex-direction: column
+  padding: 20px
+  min-height: 100vh
+
+  @supports (-webkit-touch-callout: none)
+    // The hack for Safari
+    height: -webkit-fill-available
+
+.main-wrapper
+  display: flex
+  flex-grow: 1
+  flex-direction: column
+  justify-content: center
+  
+
+.main
+  display: flex
+  // flex-grow: 1
+
+  @media mq-mobile
+    flex-direction: column
+
+    .m_right
+      order: -1
+
+  .m_left,
+  .m_right
+    width: 100%
+    flex-grow: 1
+
+.header
+  position: relative
+  display: flex
+  flex-basis: 100%
+  padding-bottom: 2em
+  z-index: 2
+
+  .h_left,
+  .h_right
+    flex-grow: 1
+
+  .h_right
+    text-align: right
+
+.footer
+  padding: 2em 0 1em
+
+body[class] .go_home
+  cursor: pointer
+  &:hover
+    color: #45C9FD
+  &:active
+      color:  #a2f827
+
+.kit
+  // width: 800px
+  // margin: 0 auto
+
+a
+  color: #27a2f8
+  text-decoration: none
+
+  &:hover
+    color: #45C9FD
+
+  &:active
+    color:  #a2f827
+
+p
+  margin: 0 0 1em
+  padding: 0
+  max-width: 25em
+
+h1
+  font-size: 120px
+  line-height: 114px
+  font-weight: 700
+  margin: 0 -4em .25em -.05em
+  white-space: nowrap
+  text-shadow: 0 0 1px #fff
+  filter: drop-shadow(-1px -1px 1px #f608) drop-shadow(1px 1px 1px #06f8)
+
+  @media mq-mobile
+    font-size: 40px
+    line-height: 1
+    margin-right: 0
+
+h2
+  font-size: 24px
+  line-height: 30px
+  margin: 0 0 .75em
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: .025em
+
+  @media mq-mobile
+    font-size: 20px
+    line-height: 24px
+
+h3
+  font-size: 1em
+  margin: 0 0 .75em
+  color: #d6d4d4
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: .025em
+
+hr
+  width: 100%
+  height: 1px
+  border: none
+  background: #383B43
+  margin: 0
+
+  &.fullwidth
+    position: absolute
+    left: 0
+    right: 0
+
+button,
+a.btn
+  display: inline-block
+  padding: 14px 30px
+  margin-right: .5em
+  margin-bottom: 0.5em
+  border: none
+  font-family: inherit
+  font-size: 1em
+  line-height: 1.35
+  vertical-align: top
+  font-weight: 700
+  color: #ffffff
+  border-radius: 2px
+  box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.15)
+  cursor: pointer
+  background: #33363c
+
+  &:hover
+    background: #4F545D
+  &:active
+    background:#8890A0
+
+  &.main_action
+    background: #2739DE
+    text-transform: uppercase
+    letter-spacing: .025em
+
+    &:hover
+      background: #27a2f8
+    &:active
+      background: #82c817
+
+  &.wide
+    padding-left: 77px
+    padding-right: @padding-left
+
+    &.btn-img
+      padding-left: 113px
+
+      img
+        margin-left: -36px
+
+  &.btn-img
+    padding-left: 66px
+
+    img
+      position: absolute
+      margin-left: -36px
+
+      @media mq-mobile
+          margin-top: -2px
+
+.soc_link-group
+  h3
+    font-size: 16px
+    // margin-bottom: 0
+
+.soc_link
+  display: inline-flex
+  width: 48px
+  height: 48px
+  justify-content: center
+  background: #bdc6c9
+  border-radius: 50%
+  padding: 9px
+  background-size: 30px
+  background-position: center
+  background-repeat: no-repeat
+  font-size: 0
+  line-height: 0
+  color: transparent
+  border: none
+  vertical-align: top
+
+  &:hover
+    background-color: #27a2f8
+  &:active
+    background-color: #82c817
+
+  &.soc_link-facebook
+    background-image: url('./img/mdi_facebook-messenger.svg')
+  &.soc_link-telegram
+    background-image: url('./img/mdi_telegram.svg')
+    background-position-x: 45%
+  &.soc_link-twitter
+    background-image: url('./img/mdi_twitter.svg')
+    background-position-x: 55%
+
+  &+&
+    margin-left: 13px
+
+.section
+  margin-bottom: 3.5em
+
+.select-group
+  margin: -.5em
+  margin-bottom: 1em
+
+  input
+    display: none
+
+  label
+    cursor: pointer
+    width: 90px
+    height: 90px
+    border-radius: 2px
+    display: inline-flex
+    margin: .5em
+    font-weight: 500
+    align-items: center
+    justify-content: center
+    vertical-align: top
+    border: 1px solid #414040
+
+    &:hover
+      border-color: #60666e
+
+  input:checked + label
+    border-color: #2a41da
+    border-width: 4px
+    cursor: default
+
+a,
+button,
+label,
+input
+  transition: .2s
+
+  &:hover
+    transition: 0s
+
+.hide {
+  display: none
+}
+
+.beta
+  font-style: italic
+  line-height: 0
+
+.park
+  font-style: italic
+  text-transform: uppercase
+  color: currentcolor
+
+.promo
+  position: relative
+  width: 100%
+  height: 430px
+  background-image: url('./img/promo1.png')
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+
+  @media mq-mobile
+    height: calc(60vw + 100px)
+    margin-bottom: -20vw
+    margin-top: -120px
+
+.show_mhc
+  position: relative
+  width: 100%
+  height: 100%
+  background-image: url('./assets/pat00_pic00.png')
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  top: 50%
+  transform: translateY(-50%)
+  filter: drop-shadow(2px 0px 1px #1d2027)
+
+  @media mq-mobile
+    filter: drop-shadow(0px -2px 1px #1d2027)
+
+  @media mq-mobile
+    height: calc(60vw + 100px)
+    margin-bottom: -30vw
+    margin-top: 130px
+
+  .actual_mhc
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-image: url('./assets/pat00_pic00.png')
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+
+.ground_img
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: calc(50% + 240px)
+  // background-repeat: no-repeat
+  background-image: url('./img/bg_ground.jpg')
+  background-position: center left
+  z-index: -1
+
+  body:not(.page_result) &
+    display: none
+
+  @media mq-mobile
+    background-position: bottom center
+    bottom: unset
+    left: 0
+
+  @media mq-not_mobile
+    height: unset !important
