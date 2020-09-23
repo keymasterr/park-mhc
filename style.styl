@@ -1,12 +1,29 @@
 mq-mobile = 'only screen and (max-width: 760px)'
 mq-not_mobile = 'only screen and (min-width: 761px)'
+
+$bg = #1d2027
+$text-color = #fff
+$select-border-color = #414040
+$select-border-hover-color = #60666e
+$select-border-checked-color = #2a41da
+$main_action-color = #2739de
+$main_action-hover-color = #27a2f8
+$main_action-active-color = #82c817
+$link-color = #27a2f8
+$link-hover-color = #45C9fd
+$link-active-color = #a2f827
+$btn-color = #33363c
+$btn-hover-color = #4F545D
+$btn-active-color = #8890A0
+
+
 *
   box-sizing: border-box
   outline: none
 
 html
-  background-color: #1d2027
-  color: #fff
+  background-color: $bg
+  color: $text-color
   font-family: Rubik, sans-serif
   font-weight: 400
   font-size: 18px
@@ -77,23 +94,27 @@ body
 body[class] .go_home
   cursor: pointer
   &:hover
-    color: #45C9FD
+    color: $link-hover-color
   &:active
-      color:  #a2f827
+      color:  $link-active-color
 
 .kit
   // width: 800px
   // margin: 0 auto
 
 a
-  color: #27a2f8
+  color: $link-color
   text-decoration: none
 
   &:hover
-    color: #45C9FD
+    color: $link-hover-color
 
   &:active
-    color:  #a2f827
+    color:  $link-active-color
+
+abbr:not([title])
+  cursor: default
+  letter-spacing: .1ex;
 
 p
   margin: 0 0 1em
@@ -158,26 +179,26 @@ a.btn
   line-height: 1.35
   vertical-align: top
   font-weight: 700
-  color: #ffffff
+  color: $text-color
   border-radius: 2px
   box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.15)
   cursor: pointer
-  background: #33363c
+  background: $btn-color
 
   &:hover
-    background: #4F545D
+    background: $btn-hover-color
   &:active
-    background:#8890A0
+    background:$btn-active-color
 
   &.main_action
-    background: #2739DE
+    background: $main_action-color
     text-transform: uppercase
     letter-spacing: .025em
 
     &:hover
-      background: #27a2f8
+      background: $main_action-hover-color
     &:active
-      background: #82c817
+      background: $main_action-active-color
 
   &.wide
     padding-left: 77px
@@ -222,9 +243,9 @@ a.btn
   vertical-align: top
 
   &:hover
-    background-color: #27a2f8
+    background-color: $main_action-hover-color
   &:active
-    background-color: #82c817
+    background-color: $main_action-active-color
 
   &.soc_link-facebook
     background-image: url('./img/mdi_facebook-messenger.svg')
@@ -259,13 +280,13 @@ a.btn
     align-items: center
     justify-content: center
     vertical-align: top
-    border: 1px solid #414040
+    border: 1px solid $select-border-color
 
     &:hover
-      border-color: #60666e
+      border-color: $select-border-hover-color
 
   input:checked + label
-    border-color: #2a41da
+    border-color: $select-border-checked-color
     border-width: 4px
     cursor: default
 
@@ -315,10 +336,10 @@ input
   background-position: center
   top: 50%
   transform: translateY(-50%)
-  filter: drop-shadow(2px 0px 1px #1d2027)
+  filter: drop-shadow(2px 0px 1px $bg)
 
   @media mq-mobile
-    filter: drop-shadow(0px -2px 1px #1d2027)
+    filter: drop-shadow(0px -2px 1px $bg)
 
   @media mq-mobile
     height: calc(60vw + 100px)
@@ -353,7 +374,17 @@ input
   @media mq-mobile
     background-position: bottom center
     bottom: unset
-    left: 0
+    left: 0 !important
 
   @media mq-not_mobile
     height: unset !important
+
+.ios-only
+  display: none
+
+.ar-link
+  img
+    position: relative
+    height: 2em
+    margin-bottom: -.6em
+    filter: invert(.75)

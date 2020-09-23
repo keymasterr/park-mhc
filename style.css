@@ -92,6 +92,10 @@ a:hover {
 a:active {
   color: #a2f827;
 }
+abbr:not([title]) {
+  cursor: default;
+  letter-spacing: 0.1ex;
+}
 p {
   margin: 0 0 1em;
   padding: 0;
@@ -378,11 +382,20 @@ body:not(.page_result) .ground_img {
   .ground_img {
     background-position: bottom center;
     bottom: unset;
-    left: 0;
+    left: 0 !important;
   }
 }
 @media only screen and (min-width: 761px) {
   .ground_img {
     height: unset !important;
   }
+}
+.ios-only {
+  display: none;
+}
+.ar-link img {
+  position: relative;
+  height: 2em;
+  margin-bottom: -0.6em;
+  filter: invert(0.75);
 }

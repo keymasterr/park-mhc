@@ -23,6 +23,11 @@ readQueryParams();
 
 updateSocLinks();
 
+if ( iOS() ) {
+    document.querySelectorAll('.ios-only').forEach(el => {
+        el.style.display = 'block'
+    });
+}
 
 
 function readQueryParams() {
@@ -156,10 +161,28 @@ function updateShowWip() {
     document.querySelectorAll('.download-3d').forEach(el => {
         el.setAttribute('href', imgPath + imgFilename + '.obj')
     });
+
+    document.querySelectorAll('.ar-link').forEach(el => {
+        el.setAttribute('href', imgPath + imgFilename + '.usdz')
+    });
 }
 
 function groundImgSize() {
     const mhcPositionY = document.querySelector('.show_mhc').offsetTop;
-    const imgSize = mhcPositionY;
-    document.querySelector('.ground_img').style.height = imgSize + 'px';
+    const mhcPositionX = document.querySelector('.show_mhc').offsetLeft + (document.querySelector('.actual_mhc').offsetWidth / 2);
+    document.querySelector('.ground_img').style.height = mhcPositionY + 'px';
+    document.querySelector('.ground_img').style.left = mhcPositionX + 'px';
+}
+
+function iOS() {
+    return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
