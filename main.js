@@ -175,6 +175,7 @@ function groundImgSize() {
 }
 
 function iOS() {
+    return true;
     return [
         'iPad Simulator',
         'iPhone Simulator',
