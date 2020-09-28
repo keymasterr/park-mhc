@@ -27,7 +27,7 @@ updateSocLinks();
 
 if ( iOS() ) {
     document.querySelectorAll('.ios-only').forEach(el => {
-        el.style.display = 'inline-block !important'
+        el.style.display = 'inline-block'
     });
 }
 
