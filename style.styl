@@ -303,6 +303,35 @@ a.btn
     border-width: 4px
     cursor: default
 
+.state-color { display: none }
+
+label[for="stateColor"]
+  cursor: pointer
+
+  &::after
+    content: ''
+    display: inline-block
+    box-sizing: border-box
+    height: 1em;
+    width: 1em;
+    margin-top: -0.175em;
+    margin-right: -0.25em;
+    margin-bottom: -0.325em;
+    margin-left: 0.5em;
+    line-height: 0.65em;
+    padding: 0 0.1em;
+    text-shadow: 2px 1px 0 #222;
+    font-size: 2em;
+    border: 1px solid $select-border-color
+
+  &:hover::after
+    border-color: $select-border-hover-color
+
+.state-color:checked + label[for="stateColor"]::after
+  content: '✓'
+  border-color: $select-border-checked-color
+  border-width: 4px
+
 a,
 button,
 label,
