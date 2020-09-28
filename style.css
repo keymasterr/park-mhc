@@ -189,8 +189,6 @@ a.btn:active {
 button.main_action,
 a.btn.main_action {
   background: #ffc806;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
   color: #222;
   border-width: 0;
 }
@@ -330,6 +328,7 @@ label[for="stateColor"]::after {
   text-shadow: 2px 1px 0 #222;
   font-size: 2em;
   border: 1px solid #414040;
+  border-radius: 2px;
 }
 label[for="stateColor"]:hover::after {
   border-color: #60666e;
@@ -445,4 +444,12 @@ body *.ios-only {
   height: 2em;
   margin-bottom: -0.6em;
   filter: invert(0.75);
+}
+.dash_before::before {
+  content: '— ';
+  position: absolute;
+  display: inline-block;
+  width: 2em;
+  margin-left: -2em;
+  text-align: right;
 }

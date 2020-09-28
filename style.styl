@@ -205,8 +205,8 @@ a.btn
 
   &.main_action
     background: $main_action-color
-    text-transform: uppercase
-    letter-spacing: .025em
+    // text-transform: uppercase
+    // letter-spacing: .025em
     color: $bg
     border-width: 0
 
@@ -331,6 +331,7 @@ label[for="stateColor"]
     text-shadow: 2px 1px 0 #222;
     font-size: 2em;
     border: 1px solid $select-border-color
+    border-radius: 2px
 
   &:hover::after
     border-color: $select-border-hover-color
@@ -438,3 +439,12 @@ body *.ios-only
     height: 2em
     margin-bottom: -.6em
     filter: invert(.75)
+
+.dash_before
+  &::before
+    content: '— '
+    position: absolute
+    display: inline-block
+    width: 2em
+    margin-left: -2em
+    text-align: right
