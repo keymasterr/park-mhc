@@ -77,6 +77,7 @@ body {
 .twocols .h_left,
 .twocols .h_right {
   flex-grow: 1;
+  align-self: baseline;
 }
 .twocols .h_right {
   text-align: right;
