@@ -42,7 +42,7 @@ function readQueryParams() {
         };
         updateShowWip();
         goToResult();
-    }
+    } else goHome();
 }
 
 function writeQueryParams() {
@@ -123,6 +123,11 @@ function goToResult() {
     document.querySelector('body').classList = [];
     document.querySelector('body').classList.add('page_result');
     groundImgSize();
+
+    document.querySelector('.result-empty').style.display = 'none';
+    if ( statePat === 'pat00' && statePic === 'pic00' ) {
+        document.querySelector('.result-empty').style.display = 'block';
+    };
 
     statePage = 2;
     writeQueryParams();

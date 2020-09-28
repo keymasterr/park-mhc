@@ -7,10 +7,10 @@ $select-border-color = #414040
 $select-border-hover-color = #60666e
 $select-border-checked-color = $main_action-color
 $main_action-color = #FFC806
-$main_action-hover-color = #27a2f8
+$main_action-hover-color = #ffe487
 $main_action-active-color = #82c817
 $link-color = $main_action-color
-$link-hover-color = #45C9fd
+$link-hover-color = #ffe487
 $link-active-color = #a2f827
 $btn-color = #33363c
 $btn-hover-color = #4F545D
@@ -49,6 +49,7 @@ html
 
 
 body
+  position: relative
   width: 100%
   margin: 0
   padding: 0
@@ -91,10 +92,12 @@ body
 
 .header
   position: relative
+  z-index: 2
+  padding-bottom: 2em
+
+.twocols
   display: flex
   flex-basis: 100%
-  padding-bottom: 2em
-  z-index: 2
 
   .h_left,
   .h_right
@@ -104,7 +107,9 @@ body
     text-align: right
 
 .footer
-  padding: 2em 0 1em
+  border-top: 1px solid rgba($text-color, .1)
+  margin-top: 3em
+  padding: 1em 0 1em
 
 body[class] .go_home
   cursor: pointer
@@ -140,8 +145,8 @@ h1
   font-size: 120px
   line-height: 114px
   font-weight: 700
-  margin: 0 -4em .25em -.05em
-  white-space: nowrap
+  margin: 0 -2em .25em -.05em
+  // white-space: nowrap
   text-shadow: 0 0 1px #fff
   filter: drop-shadow(-1px -1px 1px #f608) drop-shadow(1px 1px 1px #06f8)
 
@@ -185,10 +190,9 @@ hr
 button,
 a.btn
   display: inline-block
-  padding: 14px 30px
+  padding: 16px 30px 12px
   margin-right: .5em
   margin-bottom: 0.5em
-  border: none
   font-family: inherit
   font-size: 1em
   line-height: 1.35
@@ -198,18 +202,21 @@ a.btn
   border-radius: 2px
   box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.15)
   cursor: pointer
-  color: $bg
-  background: $btn-color
+  color: $text-color
+  background: transparent
+  border: 4px solid $main_action-color
 
   &:hover
-    background: $btn-hover-color
+    border-color: $main_action-hover-color
   &:active
-    background:$btn-active-color
+    border-color: $main_action-active-color
 
   &.main_action
     background: $main_action-color
     text-transform: uppercase
     letter-spacing: .025em
+    color: $bg
+    border-width: 0
 
     &:hover
       background: $main_action-hover-color
@@ -236,15 +243,22 @@ a.btn
       @media mq-mobile
           margin-top: -2px
 
+    &.ar-link img
+      margin-top: -0.45em;
+      margin-left: -2.2em;
+
 .soc_link-group
   h3
     font-size: 16px
-    // margin-bottom: 0
+
+  body.page_result &
+    margin-top: -10px
+    margin-left: -10px
 
 .soc_link
   display: inline-flex
-  width: 48px
-  height: 48px
+  width: 34px
+  height: @width
   justify-content: center
   filter: invert(1)
   background-size: cover  
@@ -254,8 +268,11 @@ a.btn
   line-height: 0
   color: transparent
   border: none
-  vertical-align: top
+  vertical-align: bottom
   opacity: .6
+
+  body.page_result &
+    width: 48px
 
   &:hover
     opacity: .8
@@ -270,7 +287,7 @@ a.btn
     background-image: url('./img/twitter.svg')
 
   &+&
-    margin-left: 8px
+    margin-left: 0
 
 .section
   margin-bottom: 3.5em
@@ -355,8 +372,9 @@ input
 
 .promo
   position: relative
-  width: 100%
-  height: 430px
+  width: calc(100% + 100px)
+  margin-right: -100px
+  height: 500px
   background-image: url('./img/promo1.png')
   background-size: contain
   background-repeat: no-repeat

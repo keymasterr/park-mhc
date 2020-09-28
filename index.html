@@ -22,33 +22,27 @@
 <div class="ground_img"></div>
 <div class="wrapper">
 
-    <div class="header">
-        <div class="h_left">
-            <strong class="logo go_home">Люк, я твой</strong></a> <sup class="beta">beta</sup>
-        </div>
-
-        <div class="h_right">
-            Сделано в <a href="https://intuition.team/park" class="park">Парке</a>
+    <div class="header twocols">
+        <div class="h_left constructor result">
+            <strong class="logo go_home">Первый в мире генератор люков</strong></a> <sup class="beta">beta</sup>
         </div>
     </div>
 
     <div class="main-wrapper">
         <div class="main">
             <div class="m_left">
-                <div class="intro">
+                <div class="section intro">
                     <h1>
-                        Люки для
-                        <br>
-                        страны
+                        Первый в мире генератор люков
                     </h1>
                     <p>
-                        Мы хотим, чтобы города в нашей стране становились лучше. В Парке Интуиции мы придумали новый дизайн для крышек люков. Красивые, необычные и разнообразные. Попробуйте и вы.
+                        Хочется, чтобы в наших городах было больше красоты. Для этого мы придумали новый дизайн для крышек люков. Красивые, необычные и разнообразные. Попробуйте и вы.
                     </p>
                     <button class="main_action goto_constructor" style="margin-top:1.5em;">Cобрать люк</button>
                 </div>
                 
 
-                <div class="constructor hide">
+                <div class="section constructor hide">
                     <h3>Узор</h3>
                     <div class="select-group">
                         <input type="radio" name="pat" id="pat00" checked>
@@ -96,27 +90,26 @@
                         <label for="stateColor">Цвет?</label>
                     </h3>
 
-                    <button class="main_action" id="goto_result" style="margin-top:1.5em;">К результату</button>
+                    <button class="main_action wide" id="goto_result" style="margin-top:1.5em;">К результату</button>
                 </div>
 
 
                 <div class="result hide">
+                    <h1>
+                        На iOS  в AR
+                    </h1>
                     <div class="section">
                         <h2>
                             Скачать
                         </h2>
-                        <a class="btn main_action btn-img download-png" download="ManholeCover.png">
-                            <img src="./img/mdi_cloud-download.svg">
+                        <a class="btn main_action download-png" download="ManholeCover.png">
                             PNG
                         </a>
-                        <a class="btn main_action btn-img download-3d" download>
-                            <img src="./img/mdi_cloud-download.svg">
+                        <a class="btn main_action download-3d" download>
                             3д-модель
                         </a>
-                    </div>
-
-                    <div class="section ios-only">
-                        <a class="ar-link">
+                        <br>
+                        <a class="btn btn-img ar-link ios-only">
                             <img src="./img/ar-icon.svg">
                             Примерить в <abbr>AR</abbr>
                         </a>
@@ -134,6 +127,7 @@
                     </div>
 
                     <div class="section">
+                        <p class="result-empty hide">Кажется, так будет скользко. <br>Попробуйте ещё?</p>
                         <button class="goto_constructor">
                             Хочу другой люк
                         </button>
@@ -149,10 +143,15 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="intro">
-            <div class="soc_link-group">
-                <h3>Расскажи друзьям</h3>
+    <div class="footer twocols">
+
+        <div class="h_left">
+            Сделано в <a href="https://intuition.team/park" class="park">Парке</a>
+        </div>
+
+        <div class="h_right">
+            <div class="soc_link-group intro constructor">
+                Расскажи друзьям
                 <a class="soc_link soc_link-facebook">Share to Facebook</a>
                 <a class="soc_link soc_link-telegram">Share to Telegram</a>
                 <a class="soc_link soc_link-twitter">Share to Twitter</a>
