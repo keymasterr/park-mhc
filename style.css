@@ -1,11 +1,18 @@
+@font-face {
+  font-family: 'Neue Machina';
+}
+@font-face {
+  font-family: 'Neue Machina';
+  font-weight: bold;
+}
 * {
   box-sizing: border-box;
   outline: none;
 }
 html {
-  background-color: #1d2027;
+  background-color: #222;
   color: #fff;
-  font-family: Rubik, sans-serif;
+  font-family: 'Neue Machina', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -83,7 +90,7 @@ body[class] .go_home:active {
   color: #a2f827;
 }
 a {
-  color: #27a2f8;
+  color: #ffc806;
   text-decoration: none;
 }
 a:hover {
@@ -167,6 +174,7 @@ a.btn {
   border-radius: 2px;
   box-shadow: 0px 4px 20px 4px rgba(0,0,0,0.15);
   cursor: pointer;
+  color: #222;
   background: #33363c;
 }
 button:hover,
@@ -179,7 +187,7 @@ a.btn:active {
 }
 button.main_action,
 a.btn.main_action {
-  background: #2739de;
+  background: #ffc806;
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
@@ -227,10 +235,8 @@ a.btn.btn-img img {
   width: 48px;
   height: 48px;
   justify-content: center;
-  background: #bdc6c9;
-  border-radius: 50%;
-  padding: 9px;
-  background-size: 30px;
+  filter: invert(1);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-size: 0;
@@ -238,26 +244,25 @@ a.btn.btn-img img {
   color: transparent;
   border: none;
   vertical-align: top;
+  opacity: 0.6;
 }
 .soc_link:hover {
-  background-color: #27a2f8;
+  opacity: 0.8;
 }
 .soc_link:active {
-  background-color: #82c817;
+  opacity: 1;
 }
 .soc_link.soc_link-facebook {
-  background-image: url("./img/mdi_facebook-messenger.svg");
+  background-image: url("./img/facebook.svg");
 }
 .soc_link.soc_link-telegram {
-  background-image: url("./img/mdi_telegram.svg");
-  background-position-x: 45%;
+  background-image: url("./img/telegram.svg");
 }
 .soc_link.soc_link-twitter {
-  background-image: url("./img/mdi_twitter.svg");
-  background-position-x: 55%;
+  background-image: url("./img/twitter.svg");
 }
 .soc_link+.soc_link {
-  margin-left: 13px;
+  margin-left: 8px;
 }
 .section {
   margin-bottom: 3.5em;
@@ -286,7 +291,7 @@ a.btn.btn-img img {
   border-color: #60666e;
 }
 .select-group input:checked + label {
-  border-color: #2a41da;
+  border-color: #ffc806;
   border-width: 4px;
   cursor: default;
 }
@@ -340,11 +345,11 @@ input:hover {
   background-position: center;
   top: 50%;
   transform: translateY(-50%);
-  filter: drop-shadow(2px 0px 1px #1d2027);
+  filter: drop-shadow(2px 0px 1px #222);
 }
 @media only screen and (max-width: 760px) {
   .show_mhc {
-    filter: drop-shadow(0px -2px 1px #1d2027);
+    filter: drop-shadow(0px -2px 1px #222);
   }
 }
 @media only screen and (max-width: 760px) {

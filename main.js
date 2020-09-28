@@ -1,5 +1,6 @@
 let statePat = 'pat00';
 let statePic = 'pic00';
+let stateCol = ''
 
 let statePage = 0;
 
@@ -9,6 +10,7 @@ let url = location.href;
 
 
 gallerySelect('.select-group');
+stateColChange('.state-color');
 
 document.querySelectorAll('.goto_constructor').forEach(el => el.addEventListener('click', goToConstructor));
 
@@ -34,6 +36,10 @@ function readQueryParams() {
     if ( urlParams.has('pat') && urlParams.has('pic') ) {
         statePat = 'pat' + urlParams.get('pat');
         statePic = 'pic' + urlParams.get('pic');
+        stateCol = '';
+        if ( urlParams.has('col') ) {
+            stateCol = urlParams.get('col');
+        };
         updateShowWip();
         goToResult();
     }
@@ -44,7 +50,14 @@ function writeQueryParams() {
     url = url.split('?')[0];
 
     if ( statePage === 2 ) {
-        const params = '?pat=' + statePat.slice(3) + '&pic=' + statePic.slice(3);
+        let paramCol = ''
+        if ( stateCol.length > 0 ) {
+            paramCol = '&col=' + stateCol.slice(3);
+        }
+        const params = 
+            '?pat=' + statePat.slice(3) + 
+            '&pic=' + statePic.slice(3) + 
+            paramCol;
         url += params;
     }
 
@@ -126,7 +139,7 @@ function gallerySelect(el) {
                     statePat = id;
                 } else if (type === 'pic') {
                     statePic = id;
-                }
+                };
                 updateShowWip();
             })
         });
@@ -147,10 +160,23 @@ function updateSocLinks() {
     });
 }
 
+function stateColChange(el) {
+    elem = document.querySelector(el)
+    elem.addEventListener('change', () => {
+        stateCol = '';
+        if ( elem.checked ) {
+            stateCol = 'col01';
+        }
+        updateShowWip();
+    });
+}
+
 function updateShowWip() {
     document.querySelector('.show_mhc').style.backgroundImage = document.querySelector('.actual_mhc').style.backgroundImage;
     const imgPath = './assets/';
-    const imgFilename = statePat + '_' + statePic;
+    let imgStateCol = stateCol.length > 0 ? '_' + stateCol : '';
+    const imgFilename = statePat + '_' + statePic + imgStateCol;
+    const imgFilenameObj = statePat + '_' + statePic;
 
     document.querySelector('.actual_mhc').style.backgroundImage = 'url("' + imgPath + imgFilename + '.png")';
 
@@ -159,7 +185,7 @@ function updateShowWip() {
     });
 
     document.querySelectorAll('.download-3d').forEach(el => {
-        el.setAttribute('href', imgPath + imgFilename + '.obj')
+        el.setAttribute('href', imgPath + imgFilenameObj + '.obj')
     });
 
     document.querySelectorAll('.ar-link').forEach(el => {

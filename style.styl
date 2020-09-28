@@ -1,20 +1,35 @@
 mq-mobile = 'only screen and (max-width: 760px)'
 mq-not_mobile = 'only screen and (min-width: 761px)'
 
-$bg = #1d2027
+$bg = #222
 $text-color = #fff
 $select-border-color = #414040
 $select-border-hover-color = #60666e
-$select-border-checked-color = #2a41da
-$main_action-color = #2739de
+$select-border-checked-color = $main_action-color
+$main_action-color = #FFC806
 $main_action-hover-color = #27a2f8
 $main_action-active-color = #82c817
-$link-color = #27a2f8
+$link-color = $main_action-color
 $link-hover-color = #45C9fd
 $link-active-color = #a2f827
 $btn-color = #33363c
 $btn-hover-color = #4F545D
 $btn-active-color = #8890A0
+
+@font-face
+  font-family: 'Neue Machina'
+  src:
+    local('Neue Machina'),
+    url('./NeueMachina-Regular.otf')
+    format('opentype')
+
+@font-face
+  font-family: 'Neue Machina'
+  src:
+    local('Neue Machina'),
+    url('./NeueMachina-Ultrabold.otf')
+    format('opentype')
+  font-weight: bold
 
 
 *
@@ -24,7 +39,7 @@ $btn-active-color = #8890A0
 html
   background-color: $bg
   color: $text-color
-  font-family: Rubik, sans-serif
+  font-family: 'Neue Machina', sans-serif
   font-weight: 400
   font-size: 18px
   line-height: 1.5
@@ -183,6 +198,7 @@ a.btn
   border-radius: 2px
   box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.15)
   cursor: pointer
+  color: $bg
   background: $btn-color
 
   &:hover
@@ -230,10 +246,8 @@ a.btn
   width: 48px
   height: 48px
   justify-content: center
-  background: #bdc6c9
-  border-radius: 50%
-  padding: 9px
-  background-size: 30px
+  filter: invert(1)
+  background-size: cover  
   background-position: center
   background-repeat: no-repeat
   font-size: 0
@@ -241,23 +255,22 @@ a.btn
   color: transparent
   border: none
   vertical-align: top
+  opacity: .6
 
   &:hover
-    background-color: $main_action-hover-color
+    opacity: .8
   &:active
-    background-color: $main_action-active-color
+    opacity: 1
 
   &.soc_link-facebook
-    background-image: url('./img/mdi_facebook-messenger.svg')
+    background-image: url('./img/facebook.svg')
   &.soc_link-telegram
-    background-image: url('./img/mdi_telegram.svg')
-    background-position-x: 45%
+    background-image: url('./img/telegram.svg')
   &.soc_link-twitter
-    background-image: url('./img/mdi_twitter.svg')
-    background-position-x: 55%
+    background-image: url('./img/twitter.svg')
 
   &+&
-    margin-left: 13px
+    margin-left: 8px
 
 .section
   margin-bottom: 3.5em
