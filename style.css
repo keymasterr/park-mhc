@@ -444,7 +444,7 @@ body:not(.page_result) .ground_img {
   }
 }
 .ios-only {
-  display: none;
+  display: none !important;
 }
 .ar-link img {
   position: relative;
