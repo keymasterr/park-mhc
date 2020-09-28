@@ -303,13 +303,12 @@ label[for="stateColor"] {
 }
 label[for="stateColor"]::after {
   content: '';
+  position: absolute;
   display: inline-block;
   box-sizing: border-box;
   height: 1em;
   width: 1em;
   margin-top: -0.175em;
-  margin-right: -0.25em;
-  margin-bottom: -0.325em;
   margin-left: 0.5em;
   line-height: 0.65em;
   padding: 0 0.1em;
