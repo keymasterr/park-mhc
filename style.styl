@@ -395,17 +395,16 @@ input
   background-size: contain
   background-repeat: no-repeat
   background-position: center
-  top: 50%
+  top: calc(50vh - 70px)
   transform: translateY(-50%)
   filter: drop-shadow(2px 0px 1px $bg)
 
   @media mq-mobile
-    filter: drop-shadow(0px -2px 1px $bg)
-
-  @media mq-mobile
+    top: unset
     height: calc(60vw + 100px)
     margin-bottom: -30vw
     margin-top: 130px
+    filter: drop-shadow(0px -2px 1px $bg)
 
   .actual_mhc
     position: absolute
