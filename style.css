@@ -1,8 +1,10 @@
 @font-face {
   font-family: 'Neue Machina';
+  src: local('Neue Machina'), url("./NeueMachina-Regular.otf") format('opentype');
 }
 @font-face {
   font-family: 'Neue Machina';
+  src: local('Neue Machina'), url("./NeueMachina-Ultrabold.otf") format('opentype');
   font-weight: bold;
 }
 * {
@@ -37,11 +39,6 @@ body {
   flex-direction: column;
   padding: 20px;
   min-height: 100vh;
-}
-@supports (-webkit-touch-callout: none) {
-  .wrapper {
-    height: -webkit-fill-available;
-  }
 }
 .main-wrapper {
   display: flex;
@@ -116,12 +113,10 @@ p {
   max-width: 25em;
 }
 h1 {
-  font-size: 120px;
-  line-height: 114px;
+  font-size: 100px;
+  line-height: 110px;
   font-weight: 700;
   margin: 0 -2em 0.25em -0.05em;
-  text-shadow: 0 0 1px #fff;
-  filter: drop-shadow(-1px -1px 1px rgba(255,102,0,0.533)) drop-shadow(1px 1px 1px rgba(0,102,255,0.533));
 }
 @media only screen and (max-width: 760px) {
   h1 {

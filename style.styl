@@ -18,17 +18,11 @@ $btn-active-color = #8890A0
 
 @font-face
   font-family: 'Neue Machina'
-  src:
-    local('Neue Machina'),
-    url('./NeueMachina-Regular.otf')
-    format('opentype')
+  src: local('Neue Machina'), url('./NeueMachina-Regular.otf') format('opentype')
 
 @font-face
   font-family: 'Neue Machina'
-  src:
-    local('Neue Machina'),
-    url('./NeueMachina-Ultrabold.otf')
-    format('opentype')
+  src: local('Neue Machina'), url('./NeueMachina-Ultrabold.otf') format('opentype')
   font-weight: bold
 
 
@@ -64,10 +58,6 @@ body
   flex-direction: column
   padding: 20px
   min-height: 100vh
-
-  @supports (-webkit-touch-callout: none)
-    // The hack for Safari
-    height: -webkit-fill-available
 
 .main-wrapper
   display: flex
@@ -144,13 +134,13 @@ p
   max-width: 25em
 
 h1
-  font-size: 120px
-  line-height: 114px
+  font-size: 100px
+  line-height: 110px
   font-weight: 700
   margin: 0 -2em .25em -.05em
   // white-space: nowrap
-  text-shadow: 0 0 1px #fff
-  filter: drop-shadow(-1px -1px 1px #f608) drop-shadow(1px 1px 1px #06f8)
+  // text-shadow: 0 0 1px #fff
+  // filter: drop-shadow(-1px -1px 1px #f608) drop-shadow(1px 1px 1px #06f8)
 
   @media mq-mobile
     font-size: 40px
