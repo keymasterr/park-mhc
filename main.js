@@ -195,15 +195,27 @@ function updateShowWip() {
     document.querySelector('.actual_mhc').style.backgroundImage = 'url("' + imgPath + imgFilename + '.png")';
 
     document.querySelectorAll('.download-png').forEach(el => {
-        el.setAttribute('href', imgPath + imgFilename + '.png')
+        el.setAttribute('href', imgPath + imgFilename + '.png');
+        el.addEventListener('click', () => {
+            ym(67588111,'reachGoal','pngdownload');
+            return true
+        });
     });
 
     document.querySelectorAll('.download-3d').forEach(el => {
-        el.setAttribute('href', imgPath + imgFilenameObj + '.obj')
+        el.setAttribute('href', imgPath + imgFilenameObj + '.obj');
+        el.addEventListener('click', () => {
+            ym(67588111,'reachGoal','3dfile');
+            return true
+        });
     });
 
     document.querySelectorAll('.ar-link').forEach(el => {
-        el.setAttribute('href', imgPath + imgFilename + '.usdz')
+        el.setAttribute('href', imgPath + imgFilename + '.usdz');
+        el.addEventListener('click', () => {
+            ym(67588111,'reachGoal','arpreview');
+            return true
+        });
     });
 }
 
