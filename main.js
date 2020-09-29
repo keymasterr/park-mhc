@@ -1,6 +1,6 @@
 let statePat = 'pat00';
 let statePic = 'pic00';
-let stateCol = ''
+let stateCol = 'col01'
 
 let statePage = 0;
 
@@ -28,6 +28,9 @@ updateSocLinks();
 if ( iOS() ) {
     document.querySelectorAll('.ios-only').forEach(el => {
         el.style.display = 'inline-block'
+    });
+    document.querySelectorAll('.not-ios').forEach(el => {
+        el.style.display = 'none'
     });
 }
 
@@ -80,6 +83,8 @@ function goHome() {
     statePage = 0;
     writeQueryParams();
     updateSocLinks();
+
+    window.scrollTo(0, 0);
 }
 
 function goToConstructor() {
@@ -108,6 +113,8 @@ function goToConstructor() {
     statePage = 1;
     writeQueryParams();
     updateSocLinks();
+
+    window.scrollTo(0, 0);
 }
 
 function goToResult() {
@@ -132,6 +139,8 @@ function goToResult() {
     statePage = 2;
     writeQueryParams();
     updateSocLinks();
+
+    window.scrollTo(0, 0);
 }
 
 function gallerySelect(el) {

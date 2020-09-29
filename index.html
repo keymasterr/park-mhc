@@ -16,7 +16,7 @@
     <script src="main.js" defer></script>
 
     <link href="./img/promo1.png" rel="preload" as="image" type="image/png">
-    <link href="./assets/pat00_pic00.png" rel="preload" as="image" type="image/png">
+    <link href="./assets/pat00_pic00_col01.png" rel="preload" as="image" type="image/png">
 </head>
 <body>
 <div class="ground_img"></div>
@@ -43,20 +43,25 @@
                 
 
                 <div class="section constructor hide">
+                    <h3>
+                        <input type="checkbox" class="state-color" id="stateColor" checked>
+                        <label for="stateColor">Цвет?</label>
+                    </h3>
+
                     <h3>Узор</h3>
                     <div class="select-group">
                         <input type="radio" name="pat" id="pat00" checked>
-                        <label for="pat00">без</label>
-                
+                        <label for="pat00"><img src="./img/00.png"></label>
+
                         <input type="radio" name="pat" id="pat01">
                         <label for="pat01"><img src="./img/pat01.png"></label>
-                
+
                         <input type="radio" name="pat" id="pat02">
                         <label for="pat02"><img src="./img/pat02.png"></label>
-                
+
                         <input type="radio" name="pat" id="pat03">
                         <label for="pat03"><img src="./img/pat03.png"></label>
-                
+
                         <input type="radio" name="pat" id="pat04">
                         <label for="pat04"><img src="./img/pat04.png"></label>
                     </div>
@@ -64,31 +69,26 @@
                     <h3>Рисунок</h3>
                     <div class="select-group">
                         <input type="radio" name="pic" id="pic00" checked>
-                        <label for="pic00">без</label>
-                
+                        <label for="pic00"><img src="./img/00.png"></label>
+
                         <input type="radio" name="pic" id="pic01">
                         <label for="pic01"><img src="./img/pic01.png"></label>
-                
+
                         <input type="radio" name="pic" id="pic02">
                         <label for="pic02"><img src="./img/pic02.png"></label>
-                
+
                         <input type="radio" name="pic" id="pic03">
                         <label for="pic03"><img src="./img/pic03.png"></label>
-                
+
                         <input type="radio" name="pic" id="pic04">
                         <label for="pic04"><img src="./img/pic04.png"></label>
-                
+
                         <input type="radio" name="pic" id="pic05">
                         <label for="pic05"><img src="./img/pic05.png"></label>
-                
+
                         <input type="radio" name="pic" id="pic06">
                         <label for="pic06"><img src="./img/pic06.png"></label>
                     </div>
-
-                    <h3>
-                        <input type="checkbox" class="state-color" id="stateColor">
-                        <label for="stateColor">Цвет?</label>
-                    </h3>
 
                     <button class="main_action wide" id="goto_result" style="margin-top:1.5em;">Готово</button>
                 </div>
@@ -96,7 +96,7 @@
 
                 <div class="result hide">
                     <h1 class="dash_before">
-                        На iOS  в AR!
+                        Готов к печати!
                     </h1>
                     <div class="section">
                         <h2>
@@ -113,6 +113,9 @@
                             <img src="./img/ar-icon.svg">
                             Примерить в <abbr>AR</abbr>
                         </a>
+                        <p class="not-ios">
+                            Откройте ссылку на айфоне или айпаде, чтобы примерить люк в AR
+                        </p>
                     </div>
 
                     <div class="section">
@@ -146,7 +149,7 @@
     <div class="footer twocols">
 
         <div class="h_left">
-            Сделано в <a href="https://intuition.team/park" class="park">Парке</a>
+            Сделано в <a href="https://intuition.team/park" class="park">Парке</a>
         </div>
 
         <div class="h_right">
